@@ -1,5 +1,7 @@
 from enkelt_kortspill_fullstendig import Kortstokk, Kort
 
+#Test
+
 k1 = Kort
 
 
