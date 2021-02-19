@@ -1,7 +1,5 @@
 from enkelt_kortspill_fullstendig import Kortstokk, Kort
 
-k1 = Kort
-
 
 class Spill:
     def __init__(self):
@@ -24,7 +22,7 @@ class Spill:
         # return f"Kort som ligger: {}Antall kort: {len(self.kortstokk)}"
 
     def er_ferdig(self):
-        if len(self.kortstokk) == 0:
+        if len(self.kortstokk) < 2:
             return True
         else:
             return False
@@ -55,7 +53,6 @@ if __name__ == "__main__":
     while not spel.er_ferdig():
         spel.skriv_tilstand()
         print("Skriv inn 2 eller 3 indekser(1 2 3)")
-
         usr_input = input("--> ")
         usr_input = list(map(int, usr_input.strip().split()))
         if len(usr_input) == 3:
@@ -66,6 +63,11 @@ if __name__ == "__main__":
             print("Skriv inn 2 elle 3 din tosk")
     print("---FERDIG---")
 
+
+
+
+
+"""
 spel = Spill()
 spel.skriv_tilstand()
 print()
@@ -76,7 +78,7 @@ spel.plasser_to_kort(2, 3)
 
 spel.plasser_tre_kort(0, 1, 2)
 
-"""
+
         if self.kortstokk.neste_kort().verdi < to_kort_total:
             pass
             
