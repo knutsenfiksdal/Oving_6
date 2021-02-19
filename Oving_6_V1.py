@@ -14,8 +14,10 @@ class Spill:
 
     def skriv_tilstand(self):
         print("˅------KORT------˅")
+        j = 0
         for i in self.plasser:
-            print(i[-1])
+            print(f"{j}: {i[-1]}")
+            j += 1
         print("˄------KORT------˄")
 
         print(f"Antall kort: {len(self.kortstokk)}")
@@ -28,18 +30,18 @@ class Spill:
             return False
 
     def plasser_to_kort(self, kort_1, kort_2):
-        to_kort_total = self.plasser[int(kort_1)][0].verdi + self.plasser[int(kort_2)][0].verdi
+        to_kort_total = self.plasser[int(kort_1)][-1].verdi + self.plasser[int(kort_2)][-1].verdi
         if to_kort_total == 11:
             self.plasser[int(kort_1)].append(self.kortstokk.trekk())
             self.plasser[int(kort_2)].append(self.kortstokk.trekk())
             print("Summen er 11")
         else:
-            print("Summen er ikke 11")
+            print(f"Summen er ikke 11, den er:{to_kort_total}")
 
     def plasser_tre_kort(self, kort_1, kort_2, kort_3):
-        if any(ele in str(self.plasser[int(kort_1)][0]) for ele in ["Konge", "Knekt", "Dame"]) and any(
-                ele in str(self.plasser[int(kort_2)][0]) for ele in ["Konge", "Knekt", "Dame"]) and any(
-                ele in str(self.plasser[int(kort_3)][0]) for ele in ["Konge", "Knekt", "Dame"]):
+        if any(ele in str(self.plasser[int(kort_1)][-1]) for ele in ["Konge", "Knekt", "Dame"]) and any(
+                ele in str(self.plasser[int(kort_2)][-1]) for ele in ["Konge", "Knekt", "Dame"]) and any(
+                ele in str(self.plasser[int(kort_3)][-1]) for ele in ["Konge", "Knekt", "Dame"]):
             print("Er bildekort!")
             self.plasser[int(kort_1)].append(self.kortstokk.trekk())
             self.plasser[int(kort_2)].append(self.kortstokk.trekk())
