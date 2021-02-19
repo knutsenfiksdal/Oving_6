@@ -1,7 +1,5 @@
 from enkelt_kortspill_fullstendig import Kortstokk, Kort
 
-
-
 k1 = Kort
 
 
@@ -41,8 +39,7 @@ class Spill:
     def plasser_tre_kort(self, kort_1, kort_2, kort_3):
         if any(ele in str(self.plasser[int(kort_1)][0]) for ele in ["Konge", "Knekt", "Dame"]) and any(
                 ele in str(self.plasser[int(kort_2)][0]) for ele in ["Konge", "Knekt", "Dame"]) and any(
-            ele in str(self.plasser[int(kort_3)][0]) for ele in ["Konge", "Knekt", "Dame"]):
-
+                ele in str(self.plasser[int(kort_3)][0]) for ele in ["Konge", "Knekt", "Dame"]):
             print("Er bildekort!")
             self.plasser[int(kort_1)].append(self.kortstokk.trekk())
             self.plasser[int(kort_2)].append(self.kortstokk.trekk())
