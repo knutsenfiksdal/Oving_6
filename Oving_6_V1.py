@@ -1,7 +1,7 @@
 """
 Marius Fiksdal
 marius@fiksdal.io
-14.02.2021
+15.02.2021
 """
 
 from enkelt_kortspill_fullstendig import Kortstokk, Kort
