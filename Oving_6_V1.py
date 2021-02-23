@@ -3,8 +3,13 @@ Marius Fiksdal
 marius@fiksdal.io
 15.02.2021
 """
+#TODO: Oppgaven ble godkjent ;)
+#TODO: Bør fikse slik at man ikke kan bruke samme kort flere ganger
 
 from enkelt_kortspill_fullstendig import Kortstokk, Kort
+
+
+
 
 
 class Spill:
